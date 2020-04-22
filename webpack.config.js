@@ -9,8 +9,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: dev ? 'js/[name].js' : 'js/[name].[hash].js',
-    publicPath: '/'
+    publicPath: path.resolve(__dirname, '/')
   },
+  devtool: dev ? "cheap-source-map" : "hidden-source-map",
   devServer: {
     port: 3000,
     publicPath: '/',
@@ -28,6 +29,14 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        enforce: 'pre',
+        use: {
+          loader: 'eslint-loader'
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
         }
@@ -37,12 +46,26 @@ module.exports = {
         use: ['pug-loader']
       },
       {
-        test: /\.(scss|css)$/,
+        test: /\.scss$/,
+        use: [
+          'raw-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                includePaths: [path.resolve(__dirname, 'node_modules')]
+              }
+            }
+          }
+        ]
+      },
+      {
+        test: /\.sass$/,
         use: [
           {
             loader: MiniCSSExtractPlugin.loader,
             options: {
-              hmr: dev
+              hmr: true
             }
           },
           'css-loader',

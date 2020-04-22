@@ -1,5 +1,5 @@
 import './components/header.js';
-import '../assets/css/main.scss';
+import '../assets/css/main.sass';
 import logo from '../assets/images/header.png';
 import userPhoto from '../assets/images/user.jpg';
 

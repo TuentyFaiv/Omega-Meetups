@@ -18,7 +18,7 @@ template.innerHTML = `
   </header>
 `;
 
-class HeaderApp extends HTMLElement {
+class OHeader extends HTMLElement {
 
   set imageLogo(image) {
     this.brandLogo = image;
@@ -62,4 +62,4 @@ class HeaderApp extends HTMLElement {
   }
 }
 
-customElements.define('header-app', HeaderApp);
+customElements.define('o-header', OHeader);

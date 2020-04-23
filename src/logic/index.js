@@ -1,9 +1,9 @@
 import './components/header.js';
-import '../assets/css/main.sass';
+import '../assets/css/containers/main.sass';
 import logo from '../assets/images/header.png';
 import userPhoto from '../assets/images/user.jpg';
 
-const header = document.querySelector('header-app');
+const header = document.querySelector('o-header');
 header.imageLogo = logo;
 header.user = {
   mail: 'correo@mail.com',

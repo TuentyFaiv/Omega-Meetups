@@ -1,0 +1,63 @@
+@import "../lib/lato.scss";
+@import "../lib/config.scss";
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 20px;
+  margin: 30px;
+}
+
+.communities {
+  background-color: $c-secondaryLight;
+}
+
+.upcoming-events {
+  background-color: $c-positiveLight;
+}
+
+.cardList {
+  border-radius: 5px;
+  padding: 10px;
+  height: 88%;
+
+  &--title {
+    text-align: center;
+    color: $c-white1;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 0px 14px;
+  }
+
+  &--cardInfo {
+    background-color: $c-white1;
+    border-radius: 5px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 5% 80% 15%;
+    align-items: center;
+    margin-bottom: 14px;
+
+    &__bullet {
+      text-align: center;
+    }
+
+    &__body {
+      .title {
+        font-weight: 600;
+      }
+      .text {
+        font-size: 14px;
+      }
+    }
+
+    &__link {
+      text-align: center;
+    }
+  }
+
+  .separator {
+    border: solid 1px $c-white1;
+    margin: 0px 0px 14px;
+  }
+}

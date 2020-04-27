@@ -1,0 +1,27 @@
+@import "../lib/lato.scss";
+@import "../lib/config.scss";
+
+.hero-event {
+    color: $c-white;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: linear-gradient(0deg, rgb(88, 88, 88), rgba(255, 255, 255, 1)),
+    url(http://foo.com/image.jpg);
+
+  &--info {
+    text-align: center;
+    margin: 20px 0px;
+  }
+}
+
+.primary-button {
+    color: $c-white;
+    background-color: $c-primary;
+    border: none;
+    width: 15%;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 5px;
+    cursor: pointer;
+}
